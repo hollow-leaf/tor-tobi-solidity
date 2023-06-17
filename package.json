@@ -6,6 +6,7 @@
     "node": "hardhat node",
     "deploy": "hardhat deploy:contract",
     "verify": "hardhat verify:contract",
+    "test": "rm -r test/__snapshots__ & hardhat test",
     "eslint": "eslint -c .eslintrc \"./**/*.ts\"",
     "eslint:fix": "eslint --fix \"./src/*.ts\""
   },
