@@ -30,6 +30,11 @@ npm run compile
 ```
 
 ```bash
+# Test
+npm run test
+```
+
+```bash
 # Deploy to Public Network
 npm run deploy -- --network goerli --contract Kamui
 ```
