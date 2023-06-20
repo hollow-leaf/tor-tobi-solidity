@@ -148,3 +148,4 @@ scripts/address/*
 
 # warp
 contracts/flatten/warp_output/*
+starknet-artifacts

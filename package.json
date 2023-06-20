@@ -3,8 +3,11 @@
   "scripts": {
     "clean": "rm -rf ./artifacts ./cache ./typechain",
     "compile": "hardhat compile",
+    "compile:cairo": "hardhat compile:cairo",
     "node": "hardhat node",
     "deploy": "hardhat deploy:contract",
+    "network:starknet": "docker run -p 5050:5050 shardlabs/starknet-devnet:0.5.4 --seed 42 --fork-network alpha-goerli",
+    "compile:starknet": "hardhat compile:cairo",
     "verify": "hardhat verify:contract",
     "test": "rm -r test/__snapshots__ & hardhat test",
     "flatten": "hardhat flat contracts/Kamui.sol > contracts/flatten/KamuiFlatten.sol",
