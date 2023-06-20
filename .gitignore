@@ -145,3 +145,6 @@ typechain
 typechain/*
 test/__snapshots__
 scripts/address/*
+
+# warp
+contracts/flatten/warp_output/*
