@@ -10,13 +10,20 @@ contract Kamui is ERC20 {
         _mint(msg.sender, 1000000 ether);
     }
 
+    event Deposit(address indexed depositor, uint amount);
+    event Withdraw(address indexed withdrawer, uint amount);
+
     function deposit(uint amount) public {
       transfer(address(this), amount);
+
+      emit Deposit(msg.sender, amount);
     }
 
     function withdraw(uint amount) public {
         require(amount <= this.balanceOf(address(this)), "Balance not enough");
         
         this.transfer(msg.sender, amount);
+
+        emit Withdraw(msg.sender, amount);
     }
 }

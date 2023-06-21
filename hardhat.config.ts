@@ -92,11 +92,11 @@ const config: HardhatUserConfig = {
       },
     },
   },
-  // etherscan: {
-  //   apiKey: {
-  //     goerli: process.env.ETHERSCAN_API_KEY || '',
-  //   },
-  // },
+  etherscan: {
+    apiKey: {
+      goerli: process.env.ETHERSCAN_API_KEY || '',
+    },
+  },
   typechain: {
     outDir: 'typechain',
     target: 'ethers-v5',
