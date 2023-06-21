@@ -4,6 +4,7 @@ import { NetworkUserConfig } from 'hardhat/types'
 import '@nomiclabs/hardhat-ethers'
 import '@nomiclabs/hardhat-etherscan'
 import '@nomicfoundation/hardhat-toolbox'
+import '@shardlabs/starknet-hardhat-plugin'
 
 import { config as dotenvConfig } from 'dotenv'
 import { resolve } from 'path'
@@ -49,10 +50,25 @@ const config: HardhatUserConfig = {
     hardhat: {
       chainId: chainIds.hardhat,
     },
+    devnet: {
+      url: 'http://127.0.0.1:5050',
+    },
     local: {
       url: 'http://127.0.0.1:8545',
     },
     goerli: getChainConfig('goerli'),
+  },
+  starknet: {
+    dockerizedVersion: '0.11.1',
+    recompile: false,
+    network: 'devnet',
+    wallets: {
+      OpenZeppelin: {
+        accountName: 'OpenZeppelin',
+        modulePath: 'starkware.starknet.wallets.open_zeppelin.OpenZeppelinAccount',
+        accountPath: '~/.starknet_accounts',
+      },
+    },
   },
   paths: {
     artifacts: './artifacts',
