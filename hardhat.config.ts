@@ -18,6 +18,8 @@ loadTasks(taskFolder)
 const chainIds = {
   goerli: 5,
   hardhat: 31337,
+  sepolia: 11155111,
+  'polygon-mumbai': 80001,
 }
 
 // Ensure that we have all the environment variables we need.
@@ -57,6 +59,8 @@ const config: HardhatUserConfig = {
       url: 'http://127.0.0.1:8545',
     },
     goerli: getChainConfig('goerli'),
+    sepolia: getChainConfig('sepolia'),
+    'polygon-mumbai': getChainConfig('polygon-mumbai'),
   },
   starknet: {
     dockerizedVersion: '0.11.1',
@@ -95,6 +99,8 @@ const config: HardhatUserConfig = {
   etherscan: {
     apiKey: {
       goerli: process.env.ETHERSCAN_API_KEY || '',
+      sepolia: process.env.ETHERSCAN_API_KEY || '',
+      polygonMumbai: process.env.POLYGONSCAN_API_KEY || '',
     },
   },
   typechain: {

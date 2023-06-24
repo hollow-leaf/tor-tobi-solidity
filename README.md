@@ -37,6 +37,10 @@ npm run test
 ```bash
 # Deploy to Public Network
 npm run deploy -- --network goerli --contract Kamui
+
+npm run deploy -- --network sepolia --contract Kamui
+
+npm run deploy -- --network polygon-mumbai --contract Kamui
 ```
 
 ```bash
@@ -52,13 +56,19 @@ Now we support these network:
 const chainIds = {
   goerli: 5,
   hardhat: 31337,
+  sepolia: 11155111,
+  'polygon-mumbai': 80001,
 }
 ```
 
 ### Block Explorer Verify
 
 ```bash
-npm run verify -- --network goerli --contract Kamui
+npm run verify -- --network goerli --contract Kamui --file Kamui
+
+npm run verify -- --network sepolia --contract Kamui --file Kamui
+
+npm run verify -- --network polygon-mumbai --contract Kamui --file Kamui
 ```
 
 This verify action need to have API key like `ETHERSCAN_API_KEY` in `.env` file
